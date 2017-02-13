@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mCoordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="qf.com.day39_cameraandsensor.Main2Activity">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/mAppBar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+
+
+        <!--CollapsingToolbarLayout设置如下属性来解决Title的问题：
+        app:title="MyToolBar" 表示给页面设置一个Toolbar
+        app:collapsedTitleGravity="right" 表示折叠之后Title显示的位置
+        app:expandedTitleGravity="left|bottom" 表示展开时Title显示的位置-->
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorAccent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlways"
+            app:title="MyToolBar"
+            app:collapsedTitleGravity="right"
+            app:expandedTitleGravity="left|bottom"
+            >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/p1"
+                app:layout_collapseMode="parallax"
+                app:layout_collapseParallaxMultiplier="0.5"
+                android:scaleType="fitXY"
+                />
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/mToolBar"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:layout_collapseMode="pin"
+                >
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_scrolling" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/mFab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+       android:layout_gravity="right|bottom"
+        app:srcCompat="@mipmap/ic_launcher"
+        app:backgroundTint="@color/colorPrimary"
+        app:backgroundTintMode="multiply"
+        app:borderWidth="0dp"
+        android:onClick="fabOnClick"
+        app:rippleColor="@color/colorAccent"
+
+        />
+
+
+
+</android.support.design.widget.CoordinatorLayout>
